@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Document</title>
+	</head>
+	<body>
+		<canvas width="4096" height="2160"></canvas>
+		<script>
+			const canvas = document.querySelector("canvas");
+			const C = canvas.getContext("2d");
+
+			const π = Math.PI;
+
+			let frame = 0;
+
+			class Rect {
+
+				offset = Math.random()*2;
+				speed = (Math.random()*3|0)*60 + 120;
+				dip = Math.random()*4 + 1.75
+				#x;
+				#y;
+
+				r = 76;
+				g = 0;
+				b = 117;
+
+				constructor(x, y){
+					this.x = x;
+					this.y = y;
+				}
+
+				draw(){
+					C.fillStyle = `rgb(${
+						this.getLumosity(this.r)
+					}, ${
+						this.getLumosity(this.g)
+					}, ${
+						this.getLumosity(this.b)
+					})`;
+					C.fillRect(this.x, this.y, 265, 135)
+					if(this.x > 3835){
+						C.fillRect(this.x - 4096, this.y, 265, 135)
+					}
+					if(this.y > 1919){
+						C.fillRect(this.x, this.y - 2160, 265, 135)
+					}
+				}
+
+				getLumosity(h){
+					return Math.round(h*(1-(Math.cos(π*this.offset - frame*π/this.speed) + 1)/(2*this.dip)))
+				}
+
+				get x(){
+					return this.#x;
+				}
+				get y(){
+					return this.#y;
+				}
+				set x(x){
+					this.#x = x > 4102 ? x - 4096 : x
+				}
+				set y(y){
+					this.#y = y > 2166 ? y - 2160 : y
+				}
+			}
+
+			const rects = (arr => {
+				for(let i = 0; i < 16; i++)
+					for(let j = 0; j < 16; j++)
+						arr.push(new Rect(i*256, j*135));
+				return arr
+			})([]);
+
+			let interval = setInterval(() => {
+				rects.forEach(element => {
+					element.draw()
+					element.x += 4096/12/60/2;
+				});
+					
+				/*const a = document.createElement('a');
+				a.style.display = 'none';
+				a.href = canvas.toDataURL();
+				// the filename you want
+				a.download = `${frame < 1000 ? "0" : ""}${frame < 100 ? "0" : ""}${frame < 10 ? "0" : ""}${frame}.png`;
+				document.body.appendChild(a);
+				a.click();
+				window.URL.revokeObjectURL(canvas.toDataURL())*/
+
+				frame++;
+			}, 1000/60)
+
+			//console.log(canvas.toDataURL())
+		</script>
+	</body>
+</html>
