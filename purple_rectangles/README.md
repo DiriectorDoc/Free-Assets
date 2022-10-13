@@ -11,7 +11,7 @@ When replayed, this animation makes a seamless loop.
 | FPS | 60 |
 | Length | 24s |
 | Dimentions | 4096 × 2160 (DCI 4K) |
-| Aspect ratio | 16:10 |
+| Aspect ratio | 256:135 |
 
 ## File Comparison
 
