@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Document</title>
+	</head>
+	<body>
+		<canvas width="4096" height="2160" style="background:#f0f"></canvas>
+		<script>
+			const canvas = document.querySelector("canvas");
+			const C = canvas.getContext("2d");
+
+			const π = Math.PI;
+
+			let frame = 0;
+
+			class Circle {
+				x;
+				y;
+
+				hue = Math.random()*4|0;
+
+				offset = Math.random()*240|0
+
+				constructor(x, y){
+					this.x = x;
+					this.y = y;
+				}
+
+				draw(f){
+					C.beginPath();
+					C.arc(this.x + 40, this.y + 40, 36, 0, 2 * π, false);
+					C.fillStyle = `rgba(${this.hue < 2 ? 255 : 0}, ${this.hue % 2 ? 0 : 255}, ${this.hue == 3 ? 255 : 0}, ${Math.sqrt(2*((f + this.offset)%240)/15) - ((f + this.offset)%240)/30})`;
+					C.fill();
+				}
+			}
+
+			let circles = (arr => {
+				for(let x = 8; x < 4080; x += 80)
+				for(let y = 0; y < 2160; y += 80)
+				arr.push(new Circle(x, y));
+				return arr
+			})([]);
+
+			//C.filter = "blur(16px)";
+
+			(function createFrame(frame){
+
+				C.fillStyle = "#000";
+				C.fillRect(0, 0, 4096, 2160)
+
+				circles.forEach((e, i) => {
+					e.draw(frame)
+				})
+
+				setTimeout(() => {
+					
+					/*
+					const a = document.createElement('a');
+					a.style.display = 'none';
+					a.href = canvas.toDataURL();
+					// the filename you want
+					a.download = `${frame < 100 ? "0" : ""}${frame < 10 ? "0" : ""}${frame}.png`;
+					document.body.appendChild(a);
+					a.click();
+					window.URL.revokeObjectURL(canvas.toDataURL())
+					//*/
+
+					if(frame < 240) createFrame(frame + 1);
+				}, 1000/2)
+			})(0)
+		</script>
+	</body>
+</html>
