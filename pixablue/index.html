@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Document</title>
+	</head>
+	<body>
+		<canvas width="4096" height="2160"></canvas>
+		<script>
+			const canvas = document.querySelector("canvas");
+			const C = canvas.getContext("2d");
+
+			const π = Math.PI;
+
+			class Rect {
+
+				offset = Math.random()*240|0;
+				x;
+				y;
+
+				constructor(x, y){
+					this.x = x;
+					this.y = y;
+				}
+
+				// 306x128
+
+				draw(f){
+					if(this.y < -436){
+						this.y += 436*10;
+						this.x -= 436*10
+					}
+					let z = Math.sin((f+this.offset)*π/120)**3 * 10;
+					C.fillStyle = `hwb(190 ${z < 0 ? z*-1.5 : 0}% ${z > 0 ? z : 0}%)`;
+					C.beginPath();
+					C.moveTo(this.x, this.y);
+					C.lineTo(this.x + 182, this.y - 182);
+					C.lineTo(this.x + 182 + 436, this.y - 182 + 436);
+					C.lineTo(this.x + 182 + 436 - 182, this.y - 182 + 436 + 182);
+					C.lineTo(this.x + 182 + 436 - 182 - 436, this.y - 182 + 436 + 182 - 436);
+					C.fill();
+				}
+			}
+
+			const rects = (arr => {
+				for(let y = 0; y < 24; y++)
+					for(let x = 0; x < 24; x++)
+						arr.push(new Rect(x*182*2 - 182*x + 436*y, y*436 - 182*x));
+				return arr
+			})([]);
+
+			(function createFrame(frame){
+
+				C.fillStyle = `hwb(190 0% 0%)`;
+				C.fillRect(0, 0, 4096, 2160)
+
+				rects.forEach(element => {
+					element.draw(frame)
+					element.x += 436/60;
+					element.y -= 436/60;
+				});
+
+				setTimeout(() => {
+					
+					/*
+					const a = document.createElement('a');
+					a.style.display = 'none';
+					a.href = canvas.toDataURL();
+					// the filename you want
+					a.download = `${frame < 1000 ? "0" : ""}${frame < 100 ? "0" : ""}${frame < 10 ? "0" : ""}${frame}.png`;
+					document.body.appendChild(a);
+					a.click();
+					window.URL.revokeObjectURL(canvas.toDataURL())
+					//*/
+
+					if(frame < 1200) createFrame(frame + 1);
+				}, 1000/60)
+				})(0)
+
+			//console.log(canvas.toDataURL())
+		</script>
+	</body>
+</html>
