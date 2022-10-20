@@ -20,7 +20,7 @@ When replayed, this animation makes a seamless loop.
 | Compression loss | None (lossless)   | Low               | Noticeable         |
 | Portablility     | Low               | unknown           | High               |
 | Size             | 609.87 MiB        | 358.86 MiB        | 278.28 MiB         |
-| File name        | [blinking lights - libpng.mkv](blinking%20lights%20-%20libpng.md) | [blinking lights - libx264rgb.mkv](blinking%20lights%20-%20libx264rgb.md) | [night lightning - libvpx-vp9.webm](blinking%20lights%20-%20libvpx-vp9.md) |
+| File name        | [blinking lights - libpng.mkv](blinking%20lights%20-%20libpng.md) | [blinking lights - libx264rgb.mkv](blinking%20lights%20-%20libx264rgb.md) | [blinking lights - libvpx-vp9.webm](blinking%20lights%20-%20libvpx-vp9.md) |
 | pix_fmt          | rgb24             | gbrp              | yuv420p            |
 | Notes            | Highest quality   | Low compatibility | As seen on YouTube |
 
