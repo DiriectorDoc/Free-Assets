@@ -10,3 +10,5 @@ Click on the GIF to be taken to the designated section for each asset.
 [![PixaBlue](pixablue/pixablue%20-%20example.gif)](./pixablue/)
 ## Much Clouds
 [![Much Clouds](much_clouds/much%20clouds%20-%20example.gif)](./much_clouds/)
+## Hue Wheel
+[![Hue Wheel](hue_wheel/example.gif)](./hue_wheel/)
