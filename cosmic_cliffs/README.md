@@ -22,7 +22,7 @@ This worked was adapted from [NASA’s Webb Reveals Cosmic Cliffs, Glittering La
 | Compression loss | None (lossless)                  | Negligible         | Negligible         |
 | Portablility     | Low                              | High               | High               |
 | Size             | TBD                              | 49.73 MiB          | 70.25 MiB          |
-| File name        | TBD<!--[cosmic cliffs - libpng.mkv](cosmic%20cliffs%20-%20libpng.md)--> | [cosmic cliffs - libx264.mp4](cosmic%20cliffs%20-%20libx264rgb.md) | [cosmic cliffs - libvpx-vp9.webm](cosmic%20cliffs%20-%20libvpx-vp9.md) |
+| File name        | TBD<!--[cosmic cliffs - libpng.mkv](cosmic%20cliffs%20-%20libpng.md)--> | [cosmic cliffs - libx264.mp4](cosmic%20cliffs%20-%20libx264rgb.mp4) | [cosmic cliffs - libvpx-vp9.webm](cosmic%20cliffs%20-%20libvpx-vp9.webm) |
 | pix_fmt          | rgb24                            | yuv420p            | yuv420p            |
 | Notes            | Highest quality, but impractical | High compatibility | As seen on YouTube |
 
