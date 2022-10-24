@@ -12,3 +12,5 @@ Click on the GIF to be taken to the designated section for each asset.
 [![Much Clouds](much_clouds/much%20clouds%20-%20example.gif)](./much_clouds/)
 ## Hue Wheel
 [![Hue Wheel](hue_wheel/example.gif)](./hue_wheel/)
+## Cosmic Cliffs
+[![Cosmic Cliffs](cosmic_cliffs/cosmic%20cliffs%20-%20example.gif)](./cosmic_cliffs/)
