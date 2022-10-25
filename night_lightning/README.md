@@ -22,7 +22,7 @@ When replayed, this animation makes a seamless loop.
 | Size             | 208.44 MiB        | 17.54 MiB                        | 16.67 MiB                | 15.46 MiB          |
 | File name        | [night lightning - libpng.mkv](./night%20lightning%20-%20libpng.rar) | [night lightning - libx264rgb.mkv](night%20lightning%20-%20libx264rgb.mkv) | [night lightning - libx264.mp4](./night%20lightning%20-%20libx264.mp4) | [night lightning - libvpx-vp9.webm](./night%20lightning%20-%20libvpx-vp9.webm) |
 | pix_fmt          | rgb24             | gbrp                             | yuv420p                  | yuv420p            |
-| Notes            | Highest quality   | Quality == libpng.mkv (propaply) | See Note [\[1\]](#Notes) | As seen on YouTube |
+| Notes            | Highest quality   | Quality == libpng.mkv (probably) | See Note [\[1\]](#Notes) | As seen on YouTube |
 
 ## Example
 

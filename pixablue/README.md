@@ -24,7 +24,7 @@ When replayed, this animation makes a seamless loop.
 | Size             | 105.09 MiB        | 91.07 MiB                        | 13.48 MiB             | 69.55 MiB          |
 | File name        | [pixablue - libpng.mkv](./pixablue%20-%20libpng.rar) | [pixablue - libx264rgb.mkv](pixablue%20-%20libx264rgb.mkv) | [pixablue - libx264.mp4](./pixablue%20-%20libx264.mp4) | [pixablue - libvpx-vp9.webm](./pixablue%20-%20libvpx-vp9.webm) |
 | pix_fmt          | rgb24             | gbrp                             | yuv420p               | yuv420p            |
-| Notes            | Highest quality   | Quality == libpng.mkv (propaply) | Highest compatibility | As seen on YouTube |
+| Notes            | Highest quality   | Quality == libpng.mkv (probably) | Highest compatibility | As seen on YouTube |
 
 ## Example
 

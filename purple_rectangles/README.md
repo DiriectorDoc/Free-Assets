@@ -22,7 +22,7 @@ When replayed, this animation makes a seamless loop.
 | Size             | 45.4 MiB                   | 79.07 MiB                        | 23.1 MiB                     | 22.25 MiB                            |
 | File name        | [purple rectangles - libpng.mkv](./purple%20rectangles%20-%20libpng.mkv) | [purple rectangles - libx264rgb.mkv](purple%20rectangles%20-%20libx264rgb.mkv) | [purple rectangles - libx264.mp4](./purple%20rectangles%20-%20libx264.mp4) | [purple rectangles - libvpx-vp9.webm](./purple%20rectangles%20-%20libvpx-vp9.webm) |
 | pix_fmt          | rgb24                      | gbrp                             | yuv420p                      | yuv420p                              |
-| Notes            | Highest quality            | Quality == libpng.mkv (propaply) | Highest compatibility        | As seen on YouTube                   |
+| Notes            | Highest quality            | Quality == libpng.mkv (probably) | Highest compatibility        | As seen on YouTube                   |
 
 ## Example
 
