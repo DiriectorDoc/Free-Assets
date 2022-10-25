@@ -5,7 +5,7 @@ This animation uses the photograph [Starry Sky](https://www.pexels.com/photo/sta
 
 This animation uses the asset [Weather icon - full moon.svg](https://commons.wikimedia.org/wiki/File:Weather_icon_-_full_moon.svg) from Wikimedia Commons. It has been licensed under [CC0-1.0](https://creativecommons.org/publicdomain/zero/1.0/deed.en).
 
-This animation was crated using frames extracted from the animation found at [downloader.js](./downloader.js) and Node.js. The uncompressed frames can be found in the included .rar file (WARNING: Extracting all frames takes up about 10 GB of space).
+This animation was crated using frames extracted from the animation found at [downloader.js](./downloader.js) and Node.js (WARNING: Rendering all frames takes up about 10 GB of space).
 
 When replayed, this animation makes a seamless loop.
 
