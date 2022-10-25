@@ -14,3 +14,5 @@ Click on the GIF to be taken to the designated section for each asset.
 [![Hue Wheel](hue_wheel/example.gif)](./hue_wheel/)
 ## Cosmic Cliffs
 [![Cosmic Cliffs](cosmic_cliffs/cosmic%20cliffs%20-%20example.gif)](./cosmic_cliffs/)
+## Sun and Moon
+[![Sun and Moon](sun%20and%20moon%20-%20example.gif))](./sun_and_moon/)
