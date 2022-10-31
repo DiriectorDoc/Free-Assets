@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Document</title>
+		<style>
+			img {
+				display: none
+			}
+		</style>
+	</head>
+	<body>
+		<canvas width="4096" height="2160"></canvas>
+		<script>
+			const canvas = document.querySelector("canvas");
+			const C = canvas.getContext("2d");
+
+			const π = Math.PI;
+
+			class Body {
+				d;
+				wC;
+				hC;
+				img = new Image();
+				r;
+				o;
+				p = Math.random();
+				order;
+				id;
+
+				constructor(d, wc, hc, img, r, o, id){
+					this.d = d;
+					this.wC = wc;
+					this.hC = hc;
+					this.img.src = img;
+					this.r = r;
+					this.o = o;
+					this.p *= o*120;
+					this.id = id;
+				}
+
+				draw(f){
+					//f-=this.id*4;
+					C.drawImage(this.img, (4096 - (this.d*this.wC + 2*this.r)*Math.sin(π*(f + this.p)/(90*this.o)) - this.d*this.wC)/2, 1080 - this.d*this.hC/2 - 135*this.r*Math.cos(π*(f + this.p)/(90*this.o))/256, this.d*this.wC, this.d*this.hC)
+				}
+			}
+
+			function smartImage(src){
+				let img = new Image;
+				img.src = src;
+				return img
+			}
+
+			const sun = {
+				base: smartImage("./assets/base.png"),
+				draw(f){
+					C.drawImage(sun.base, 1798, 830)
+					C.globalAlpha = sun.f(f);
+					C.drawImage(sun.l1, 1798, 830)
+					C.globalAlpha = sun.f(f - 180)**2;
+					C.drawImage(sun.l2, 1798, 830)
+					C.globalAlpha = 1 - sun.f(f)**2;
+					C.drawImage(sun.l3, 1798, 830)
+					C.globalAlpha = 1 - sun.f(f - 360);
+					C.drawImage(sun.l4, 1798, 830)
+					C.globalAlpha = sun.f(-5*f - 180);
+					C.drawImage(sun.l5, 1798, 830)
+					C.globalAlpha = 1 - sun.f(f - 360)**2;
+					C.drawImage(sun.l6, 1798, 830)
+					C.globalAlpha = 1 - sun.f(f - 180)**2;
+					C.drawImage(sun.l7, 1798, 830)
+					C.globalAlpha = 1;
+				},
+				id: 0,
+				order: 0,
+				l1: smartImage("./assets/1.png"),
+				l2: smartImage("./assets/2.png"),
+				l3: smartImage("./assets/3.png"),
+				l4: smartImage("./assets/4.png"),
+				l5: smartImage("./assets/5.png"),
+				l6: smartImage("./assets/6.png"),
+				l7: smartImage("./assets/7.png"),
+
+				f: (x) => Math.min(Math.max(Math.sin(x*π/360)/2 + .5, 0), 1),
+			};
+
+			const mercury = new Body(39.0352, 1, 1, "./assets/mercury.svg", 325, 1, 1),
+				venus = new Body(96.832, 1, 1, "./assets/venus.svg", 425, 2, 2),
+				earth = new Body(101.936, 1, 1, "./assets/earth.svg", 575, 3, 3),
+				mars = new Body(54.232, 1, 1, "./assets/mars.svg", 750, 6, 4),
+				jupiter = new Body(279.64, 1, 1, "./assets/jupiter.svg", 875, 8, 5),
+				saturn = new Body(232.92, 1.85759, 1.38484, "./assets/saturn.svg", 1215, 12, 6),
+				uranus = new Body(101.448, 1, 1, "./assets/uranus.svg", 1680, 16, 7),
+				neptune = new Body(98.488, 1, 1, "./assets/neptune.svg", 1850, 24, 8);
+
+			const bodies = [sun,mercury,venus,earth,mars,jupiter,saturn,uranus,neptune];
+
+			const smog = smartImage("./assets/smog.png")
+				smogD = smartImage("./assets/smog darkness.png"),
+				blue = smartImage("./assets/subtle blue.png"),
+				stars1 = smartImage("./assets/stars-rounded.png"),
+				stars2 = smartImage("./assets/stars-rounded2.png"),
+				darkness = smartImage("./assets/darkness.png");
+
+			// frames needed: 8640
+
+			let frame = 0;
+			setInterval(() => {
+
+				bodies.forEach((e) => {
+					if(e.id != 0) e.order = Math.sign(Math.cos((frame+e.p)*π/90/e.o))*e.id
+				})
+				bodies.sort((a, b) => {
+					return a.order < b.order ? 1 : -1
+				})
+				
+				C.drawImage(smog, 0, -frame%2160)
+				C.drawImage(smogD, 0, 0)
+				C.drawImage(blue, 0, 0)
+				C.globalAlpha = .5;
+				C.drawImage(stars1, 0, 0)
+				C.drawImage(stars2, 0, 0)
+				C.globalAlpha = 1;
+				C.drawImage(darkness, 0, 0)
+
+				bodies.forEach(e => {
+					e.draw(frame)
+				})
+
+				frame++
+			}, 1000/60)
+		</script>
+	</body>
+</html>

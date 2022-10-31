@@ -15,4 +15,6 @@ Click on the GIF to be taken to the designated section for each asset.
 ## Cosmic Cliffs
 [![Cosmic Cliffs](cosmic_cliffs/cosmic%20cliffs%20-%20example.gif)](./cosmic_cliffs/)
 ## Sun and Moon
-[![Sun and Moon](sun%20and%20moon%20-%20example.gif))](./sun_and_moon/)
+[![Sun and Moon](sun_and_moon/sun%20and%20moon%20-%20example.gif))](./sun_and_moon/)
+## Solar System
+[![Solar System](solar_system/solar%20system%20-%20example.gif)))](./solar_system/)
