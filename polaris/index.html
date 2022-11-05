@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Document</title>
+		<style>
+			img {
+				display: none
+			}
+		</style>
+	</head>
+	<body>
+		<canvas width="4096" height="2160"></canvas>
+		<script>
+			const canvas = document.querySelector("canvas");
+			const C = canvas.getContext("2d");
+
+			const π = Math.PI;
+
+			function smartImage(src){
+				let img = new Image;
+				img.src = src;
+				return img
+			}
+
+			const stars = smartImage("Polaris_(star).jpg"),
+				foreground = smartImage("foreground.png"),
+				overlay = smartImage("landscape overlay.png");
+
+			C.fillStyle = "black";
+
+			let frame = 0;
+			setInterval(() => {
+				
+				C.fillRect(0, 0, 4096, 2160)
+
+				C.save();
+				C.translate(2450, 500);
+				C.rotate(frame*π/1800);
+				C.translate(-2692, -1351);
+				C.drawImage(stars, 0, 0);
+				C.restore();
+
+				C.drawImage(foreground, 0, 0)
+				C.globalAlpha = Math.sin(Math.sin((π*frame)/600)**3 + (1 - 2*Math.sin((π*frame)/1800)**3)*Math.sin((π*frame)/900) + Math.sin((π*frame)/450) + Math.sin((π*frame)/225))/10 + 0.675;
+				C.drawImage(overlay, 0, 0)
+				C.globalAlpha = 1;
+
+				frame++
+			}, 1000/60)
+		</script>
+	</body>
+</html>

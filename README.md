@@ -20,3 +20,5 @@ Click on the GIF to be taken to the designated section for each asset.
 [![Solar System](solar_system/solar%20system%20-%20example.gif)](./solar_system/)
 ## Mondrian Rectangles
 [![Mondrian Rectangles](mondrian_rectangles/mondrian%20rectangles%20-%20example.gif)](./mondrian_rectangles/)
+## Polaris
+[![Polaris](polaris/polaris%20-%20example.gif)](./polaris/)
