@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Document</title>
+	</head>
+	<body>
+		<canvas width="4096" height="2160"></canvas>
+		<script>
+			const canvas = document.querySelector("canvas");
+			const C = canvas.getContext("2d");
+
+			const π = Math.PI;
+
+			class Circle {
+				r = Math.max(Math.random()*250, 50);
+				x = Math.random()*4096;
+				y = Math.random()*2160;
+
+				h = (Math.random()*36|0)*10
+
+				draw(){
+					C.beginPath();
+					C.arc(this.x, this.y, this.r, 0, 2*π, false);
+					C.fillStyle = `hwb(${this.h} 0% 0%)`;
+					C.fill();
+				}
+			}
+
+			const circles = new Array(1200).fill(0).map(() => new Circle);
+
+			circles.forEach(e => e.draw())
+
+			let frame = 0;
+			setInterval(() => {
+
+				circles[frame%1200].draw()
+
+				frame++
+				
+			}, 1000/60)
+		</script>
+	</body>
+</html>
