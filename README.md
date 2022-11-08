@@ -22,3 +22,8 @@ Click on the GIF to be taken to the designated section for each asset.
 [![Mondrian Rectangles](mondrian_rectangles/mondrian%20rectangles%20-%20example.gif)](./mondrian_rectangles/)
 ## Polaris
 [![Polaris](polaris/polaris%20-%20example.gif)](./polaris/)
+## PixaMisc
+[![PixaGreen](pixamisc/pixagreen%20-%20example.gif)](./pixamisc/)
+[![PixaMage](pixamisc/pixamage%20-%20example.gif)](./pixamisc/)
+[![PixaRed](pixamisc/pixared%20-%20example.gif)](./pixamisc/)
+[![PixaYellow](pixamisc/pixayellow%20-%20example.gif)](./pixamisc/)
