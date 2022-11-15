@@ -27,3 +27,5 @@ Click on the GIF to be taken to the designated section for each asset.
 [![PixaMage](pixamisc/pixamage%20-%20example.gif)](./pixamisc/)
 [![PixaRed](pixamisc/pixared%20-%20example.gif)](./pixamisc/)
 [![PixaYellow](pixamisc/pixayellow%20-%20example.gif)](./pixamisc/)
+## PixaHue
+[![PixaHue](pixahue/pixahue%20-%20example.gif)](./pixahue/)

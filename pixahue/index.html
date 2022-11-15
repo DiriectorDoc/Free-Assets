@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Document</title>
+	</head>
+	<body>
+		<canvas width="4096" height="2160"></canvas>
+		<script>
+			const canvas = document.querySelector("canvas");
+			const C = canvas.getContext("2d");
+
+			const π = Math.PI;
+
+			class Rect {
+
+				offset = (Math.random()*36|0)*10;
+				x;
+				y;
+
+				constructor(x, y){
+					this.x = x;
+					this.y = y;
+				}
+
+				draw(f){
+					if(this.y < -436){
+						this.y += 436*10;
+						this.x -= 436*10
+					}
+					C.fillStyle = `hsl(${f/4+this.offset}, 100%, 50%)`;
+					C.beginPath();
+					C.moveTo(this.x, this.y);
+					C.lineTo(this.x + 182, this.y - 182);
+					C.lineTo(this.x + 182 + 436, this.y - 182 + 436);
+					C.lineTo(this.x + 182 + 436 - 182, this.y - 182 + 436 + 182);
+					C.lineTo(this.x + 182 + 436 - 182 - 436, this.y - 182 + 436 + 182 - 436);
+					C.fill();
+				}
+			}
+
+			const rects = (arr => {
+				for(let y = 0; y < 24; y++)
+					for(let x = 0; x < 24; x++)
+						arr.push(new Rect(x*182*2 - 182*x + 436*y, y*436 - 182*x));
+				return arr
+			})([]);
+
+			let frame = 0;
+			setInterval(() => {
+					
+				C.fillStyle = `#fff`;
+				C.fillRect(0, 0, 4096, 2160)
+
+				rects.forEach(element => {
+					element.draw(frame)
+					element.x += 436/60;
+					element.y -= 436/60;
+				});
+
+				frame++
+
+			}, 1000/60)
+		</script>
+	</body>
+</html>
