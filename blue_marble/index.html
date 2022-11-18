@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Document</title>
+		<style>
+			img {
+				display: none
+			}
+		</style>
+	</head>
+	<body>
+		<canvas width="4096" height="2160"></canvas>
+		<script>
+			const canvas = document.querySelector("canvas");
+			const C = canvas.getContext("2d");
+
+			const π = Math.PI;
+
+			function smartImage(src){
+				let img = new Image;
+				img.src = src;
+				return img
+			}
+
+			function drawSlice(x, y){
+				let w = Math.sqrt(1e6 - (y - 1000)**2);
+				if(x <= 2000)
+					C.drawImage(marble, x*6, y*6, 12000, 6, 2048-w, y+80, w*2, 1);
+				else {
+					let diff = x-2000;
+					C.drawImage(marble, x*6, y*6, 6*(2000-diff), 6, 2048-w, y+80, (2000-diff)*w/1000 + 1, 1);
+					C.drawImage(marble, 0, y*6, 6*diff, 6, 2048+w - w*diff/1000 - 1, y+80, w*diff/1000 + 1, 1);
+				}
+			}
+
+			const marble = smartImage("assets/Whole_world_-_land_and_oceans_12000.jpg");
+
+			marble.onload = () => {
+
+				console.time("Draw")
+				for(let i = 0; i < 2000; i++){
+					drawSlice(2500, i)
+				}
+				console.timeEnd("Draw")
+
+			}
+		</script>
+	</body>
+</html>
