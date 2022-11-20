@@ -15,14 +15,16 @@ When replayed, this animation makes a seamless loop.
 
 ## File Comparison
 
-|                  | PNGs as Matrostka          | H.264 + RGB                      | H.264                        | VP9                         |
-|------------------|----------------------------|----------------------------------|------------------------------|-----------------------------|
-| Compression loss | None (lossless)            | unknown                          | Miniscule                    | Noticable                   |
-| Portablility     | Low                        | unknown                          | High                         | High                        |
-| Size             | 18.8 GiB                   | 86.36 MiB                        | 64.3 MiB                     | 91.9 MiB                    |
-| File name        | [much clouds - libpng.mkv](./much%20clouds%20-%20libpng.md) | [much clouds - libx264rgb.mkv](much%20clouds%20-%20libx264rgb.mkv) | [much clouds - libx264.mp4](./much%20clouds%20-%20libx264.mp4) | [much clouds - libvpx-vp9.webm](./much%20clouds%20-%20libvpx-vp9.webm) |
-| pix_fmt          | rgb24                      | gbrp                             | yuv420p                      | yuv420p                     |
-| Notes            | Highest quality, but extremely impractical | Possibly lowest compression loss | Highest compatibility | As seen on YouTube |
+Update 11/20/22: To save space on Mediafire (the file hosting system), libpng.mkv will no lobger be provided. If you wish obtain a collection of all frames as PNGs, feel free to download [clouds.png](clouds.png) and [cropper.bat](cropper.bat) to generate the frames yourself (note, this script uses ImageMagick through the command `magick`. Some older versions use the command `convert` instead and may require a tweak to the script).
+
+|                  | H.264 + RGB                      | H.264                 | VP9                |
+|------------------|----------------------------------|-----------------------|--------------------|
+| Compression loss | unknown                          | Miniscule             | Noticable          |
+| Portablility     | unknown                          | High                  | High               |
+| Size             | 86.36 MiB                        | 64.3 MiB              | 91.9 MiB           |
+| File name        | [much clouds - libx264rgb.mkv](much%20clouds%20-%20libx264rgb.mkv) | [much clouds - libx264.mp4](./much| [much clouds - libvpx-vp9.webm](./much%20clouds%20-%20libvpx-vp9.webm) |
+| pix_fmt          | gbrp                             | yuv420p               | yuv420p            |
+| Notes            | Possibly lowest compression loss | Highest compatibility | As seen on YouTube |
 
 ## Example
 
