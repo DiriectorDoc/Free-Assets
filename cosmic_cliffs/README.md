@@ -17,14 +17,16 @@ This worked was adapted from [NASA’s Webb Reveals Cosmic Cliffs, Glittering La
 
 ## File Comparison
 
-|                  | PNGs as Matrostka                | H.264              | VP9                |
-|------------------|----------------------------------|--------------------|--------------------|
-| Compression loss | None (lossless)                  | Negligible         | Negligible         |
-| Portablility     | Low                              | High               | High               |
-| Size             | 15.9 GiB                         | 49.73 MiB          | 70.25 MiB          |
-| File name        | [cosmic cliffs - libpng.mkv](cosmic%20cliffs%20-%20libpng.md) | [cosmic cliffs - libx264.mp4](cosmic%20cliffs%20-%20libx264.mp4) | [cosmic cliffs - libvpx-vp9.webm](cosmic%20cliffs%20-%20libvpx-vp9.webm) |
-| pix_fmt          | rgb24                            | yuv420p            | yuv420p            |
-| Notes            | Highest quality, but impractical | High compatibility | As seen on YouTube |
+Update 11/20/22: To save space on Mediafire (the file hosting system), libpng.mkv will no lobger be provided. If you wish obtain a collection of all frames as PNGs, feel free to download [x4extended.png](x4extended.png) and [cropper.bat](cropper.bat) to generate the frames yourself (note, this script uses ImageMagick through the command `magick`. Some older versions use the command `convert` instead and may require a tweak to the script).
+
+|                  | H.264              | VP9                |
+|------------------|--------------------|--------------------|
+| Compression loss | Negligible         | Negligible         |
+| Portablility     | High               | High               |
+| Size             | 49.73 MiB          | 70.25 MiB          |
+| File name        | [cosmic cliffs - libx264.mp4](cosmic%20cliffs%20-%20libx264.mp4) | [cosmic cliffs - libvpx-vp9.webm](bm) |
+| pix_fmt          | yuv420p            | yuv420p            |
+| Notes            | High compatibility | As seen on YouTube |
 
 ## Example
 
