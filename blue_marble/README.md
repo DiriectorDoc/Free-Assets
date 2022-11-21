@@ -23,4 +23,4 @@ Please read [these instructions](./blue%20marble%20-%20libvpx-vp9%20(slightly%20
 
 The following is a downscaled example of the animated background.
 
-![Blue Marble](blue%20marble%20-%20example.gif)
+![Blue Marble](blue%20marble%20-%20example.webp)

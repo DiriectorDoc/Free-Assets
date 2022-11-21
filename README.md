@@ -29,5 +29,7 @@ Click on the GIF to be taken to the designated section for each asset.
 [![PixaYellow](pixamisc/pixayellow%20-%20example.gif)](./pixamisc/)
 ## PixaHue
 [![PixaHue](pixahue/pixahue%20-%20example.gif)](./pixahue/)
-## PixaHue
+## Blue Marble
+[![Blue Marble](blue_marble/blue%20marble%20-%20example.webp)](./blue_marble/)
+## Pillars of Creation
 [![Pillars of Creation](pillars_of_creation/pillars%20of%20creation%20-%20example.webp)](./pillars_of_creation/)
