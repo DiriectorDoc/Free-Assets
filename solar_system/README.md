@@ -23,4 +23,4 @@ Please read [these instructions](./solar%20system%20-%20libx264/) to download a 
 
 The following is a downscaled example of the animated background.
 
-![Solar System](solar%20system%20-%20example.gif)
+![Solar System](solar%20system%20-%20example.webp)

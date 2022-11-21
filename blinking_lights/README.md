@@ -30,4 +30,4 @@ The first 20 frames of libpng.mkv are loslessly compresses as much as possible (
 
 The following is a downscaled example of the animated background.
 
-![Blinking Lights](blinking%20lights%20-%20example.gif)
+![Blinking Lights](blinking%20lights%20-%20example.webp)

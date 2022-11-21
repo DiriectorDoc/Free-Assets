@@ -30,4 +30,4 @@ Update 11/20/22: To save space on Mediafire (the file hosting system), libpng.mk
 
 The following is a downscaled example of the animated background.
 
-![Much Clouds](much%20clouds%20-%20example.gif)
+![Much Clouds](much%20clouds%20-%20example.webp)

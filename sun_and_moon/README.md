@@ -32,4 +32,4 @@ When replayed, this animation makes a seamless loop.
 
 The following is a downscaled example of the animated background.
 
-![Sun and Moon](sun%20and%20moon%20-%20example.gif)
+![Sun and Moon](sun%20and%20moon%20-%20example.webp)

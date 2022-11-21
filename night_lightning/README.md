@@ -28,7 +28,7 @@ When replayed, this animation makes a seamless loop.
 
 The following is a downscaled example of the animated background.
 
-![Night Lightning](night%20lightning%20-%20example.gif)
+![Night Lightning](night%20lightning%20-%20example.webp)
 
 ## Notes
 
