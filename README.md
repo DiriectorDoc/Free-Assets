@@ -33,3 +33,7 @@ Click on the GIF to be taken to the designated section for each asset.
 [![Blue Marble](blue_marble/blue%20marble%20-%20example.webp)](./blue_marble/)
 ## Pillars of Creation
 [![Pillars of Creation](pillars_of_creation/pillars%20of%20creation%20-%20example.webp)](./pillars_of_creation/)
+## Crasta Mora
+[![crasta mora](crasta_mora/crasta%20mora%20-%20example.webp)](./crasta_mora/)
+## Random Stars
+[![Random Stars](random_stars/random%20stars%20-%20example.webp)](./random_stars/)
