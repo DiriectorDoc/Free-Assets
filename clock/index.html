@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Document</title>
+		<style>
+			img {
+				display: none
+			}
+		</style>
+	</head>
+	<body>
+		<canvas width="2160" height="2160"></canvas>
+		<script>
+			const canvas = document.querySelector("canvas");
+			const C = canvas.getContext("2d");
+
+			const π = Math.PI;
+
+			function smartImage(src){
+				let img = new Image;
+				img.src = src;
+				return img
+			}
+
+			const face = smartImage("assets/face.svg"),
+				hour = smartImage("assets/hour.svg"),
+				minute = smartImage("assets/minute.svg"),
+				second = smartImage("assets/second.svg");
+
+			C.fillStyle = "white";
+
+			let frame = 0;
+			setInterval(() => {
+				
+				C.clearRect(0, 0, 2160, 2160)
+
+				C.beginPath();
+				C.arc(1080, 1080, 1078, 0, 2*π);
+				C.fill()
+
+				C.drawImage(face, 0, 0)
+
+				C.save();
+				C.translate(1080, 1080);
+				C.rotate(-3*π/40 + frame/21600*π);
+				C.translate(-1080, -1080);
+				C.drawImage(hour, 0, 0);
+				C.restore();
+
+				C.save();
+				C.translate(1080, 1080);
+				C.rotate(-9*π/10 + (frame%3600)/1800*π);
+				C.translate(-1080, -1080);
+				C.drawImage(minute, 0, 0);
+				C.restore();
+
+				C.save();
+				C.translate(1080, 1080);
+				C.rotate(-12*π/30 + (frame%60)/30*π);
+				C.translate(-1080, -1080);
+				C.drawImage(second, 0, 0);
+				C.restore();
+
+				frame++
+			}, 1000)
+		</script>
+	</body>
+</html>

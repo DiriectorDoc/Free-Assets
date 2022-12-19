@@ -37,3 +37,7 @@ Click on the GIF to be taken to the designated section for each asset.
 [![crasta mora](crasta_mora/crasta%20mora%20-%20example.webp)](./crasta_mora/)
 ## Random Stars
 [![Random Stars](random_stars/random%20stars%20-%20example.webp)](./random_stars/)
+## Chroma Dots
+[![Chroma Dots](chroma_dots/chroma%20dots%20-%20example.webp)](./chroma_dots/)
+## Clock
+[![Clock](clock/clock%20-%20example.webp)](./clock/)
