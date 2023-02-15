@@ -1,0 +1,2 @@
+# Real-time Earth
+Each folder contains numerous .rar files, all of which extract to a 1-hour clip of earth. To obtain said clip, download all the .rar files in that folder, then extract the .webm using WinRar or equivalent.
