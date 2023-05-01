@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Document</title>
+		<style>
+			img {
+				display: none
+			}
+
+			canvas {
+				background-color: black;
+			}
+		</style>
+	</head>
+	<body>
+		<canvas width="3840" height="2160"></canvas>
+		<script>
+			const canvas = document.querySelector("canvas");
+			const C = canvas.getContext("2d");
+
+			let arr = Array(64).fill(0).map(e => [Array(72).fill(0).map((_, i) => i & 1), Array(72).fill(0).map((_, i) => (i + 1) & 1)]).flat(1)
+
+			arr.forEach((e, i) => {
+				e.forEach((_, j) => {
+					C.fillStyle = i + j & 1 ? "rgb(204, 204, 204)" : "rgb(153, 153, 153)";
+					C.fillRect(i*30, j*30, 30, 30)
+				})
+			})
+		</script>
+	</body>
+</html>
