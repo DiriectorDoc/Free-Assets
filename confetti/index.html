@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Document</title>
+		<style>
+			img {
+				display: none
+			}
+
+			canvas {
+				background-color: black;
+			}
+		</style>
+	</head>
+	<body>
+		<canvas width="4096" height="2160" style="background:black"></canvas>
+		<script>
+			const canvas = document.querySelector("canvas");
+			const C = canvas.getContext("2d");
+
+			const π = Math.PI;
+
+			const coords = [[1,1],[1,-1],[-1,-1],[-1,1]];
+
+			let frame = 0;
+
+			class Confetto {
+				θ = Math.random()*π*2;
+				offsets = Array(4).fill(0).map(e => [Math.random()/2 - .5/3, Math.random()/2 - .5/3]);
+				offsets2 = Array(4).fill(0).map(e => [Math.random()/2 - .5/3, Math.random()/2 - .5/3]);
+				size = Math.random()*7+5;
+				fillStyle = `hsl(${Math.random()*360} 100% 50%)`;
+				rc = (Math.random()*3 + 1)*2;
+				ix = Math.random()*4096 * this.rc;
+				iy = 2160 * this.rc*3;
+				ex = this.ix + (600*Math.random() - 1200)*this.rc;
+				fc = 1;
+				fo = Math.random()*3600;
+				pc = Math.random()*2 + 2.5;
+				po = Math.random()*2*π;
+
+				get x(){
+					return (((frame + this.fo)*this.fc)%3600)/3600 * this.ex + this.ix
+				}
+				get y(){
+					return (((frame + this.fo)*this.fc)%3600 - 600)/3600 * this.iy
+				}
+
+				draw(period){
+					C.beginPath()
+					C.fillStyle = this.fillStyle;
+					coords.forEach((e, i) => {
+						let {θ, offsets, offsets2, size, pc} = this,
+
+							p = pc*period + this.po,
+
+							x = e[0] + this.offsets[i][0],
+							y = e[1] + this.offsets[i][1],
+							newx = x*Math.cos(θ) - y*Math.sin(θ),
+							newy = x*Math.sin(θ) + y*Math.cos(θ),
+
+							transposed = [Math.cos(p)*newx + this.offsets2[i][0], Math.sin(p + π*(x+1)/2)/5 * newy + newy + this.offsets2[i][1]];
+						C.lineTo((transposed[0]*Math.cos(θ) - transposed[1]*Math.sin(θ))*size + this.x, (transposed[0]*Math.sin(θ) + transposed[1]*Math.cos(θ))*size + this.y)
+					})
+					C.closePath()
+					C.fill()
+				}
+			}
+
+			const confetti = Array(8000*2).fill(0).map(_ => new Confetto).sort((a, b) => a.size - b.size);
+
+			setInterval(() => {
+				
+				C.clearRect(0, 0, 4096, 2160)
+
+				// C.fillStyle = "black";
+				// C.fillRect(0, 0, 4096, 2160)
+
+				let p = frame*π/120;
+
+				for(let c of confetti){
+					c.draw(p)
+				}
+
+				frame++
+			}, 1000/60)
+		</script>
+	</body>
+</html>
